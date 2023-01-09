@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/home/main")
+@WebServlet("/home/main2")
 public class HomeMainServlet2 extends HttpServlet {
 	
     
