@@ -59,4 +59,24 @@
     <servlet-name>ArticleWriteServlet</servlet-name>
     <url-pattern>/ArticleWriteServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ArticleDoModify</display-name>
+    <servlet-name>ArticleDoModify</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.ArticleDoModify</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArticleDoModify</servlet-name>
+    <url-pattern>/ArticleDoModify</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ArticleModify</display-name>
+    <servlet-name>ArticleModify</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.ArticleModify</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArticleModify</servlet-name>
+    <url-pattern>/ArticleModify</url-pattern>
+  </servlet-mapping>
 </web-app>
