@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
 
 import com.KoreaIT.java.am.util.DBUtil;
 import com.KoreaIT.java.am.util.SecSql;
@@ -17,14 +14,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/article/list")
-public class ArticleListServlet extends HttpServlet {
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+@WebServlet("/article/doDelete")
+public class ArticleDoDelete extends HttpServlet {
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
-
+		
 		Connection conn = null;
 
 		try {
@@ -38,33 +33,15 @@ public class ArticleListServlet extends HttpServlet {
 		try {
 			conn = DriverManager.getConnection(url, "root", "");
 
-			int page = 1;
-			if (request.getParameter("page") != null && request.getParameter("page").length() != 0){
-			  page = Integer.parseInt(request.getParameter("page"));
-			}
-
-			int itemsInAPage = 10;
-
-			int limitFrom = (page - 1) * itemsInAPage;
+			int id = Integer.parseInt(request.getParameter("id")); 
 			
-			SecSql sql = SecSql.from("SELECT COUNT(id)");
+			SecSql sql = SecSql.from("DELETE");
 			sql.append("FROM article");
+			sql.append("WHERE id = ?", id);
 			
-			int totalCount = DBUtil.selectRowIntValue(conn, sql);
-			int totalPage = (int)Math.ceil((double)totalCount / itemsInAPage);
+			DBUtil.delete(conn, sql);
 			
-			sql = SecSql.from("SELECT *");
-			sql.append("FROM article");
-			sql.append("ORDER BY id DESC");
-			sql.append("LIMIT ?, ?", limitFrom, itemsInAPage);
-
-			List<Map<String, Object>> articleRows = DBUtil.selectRows(conn, sql);
-
-			request.setAttribute("page", page);
-			request.setAttribute("totalPage", totalPage);
-			request.setAttribute("articleRows", articleRows);
-
-			request.getRequestDispatcher("/jsp/article/list.jsp").forward(request, response);
+			response.getWriter().append(String.format("<script>alert('%d번 글이 삭제 되었습니다.'); location.replace('list');</script>", id));
 
 		} catch (SQLException e) {
 			System.out.println("에러: " + e);
@@ -77,7 +54,6 @@ public class ArticleListServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-
 	}
 
 }

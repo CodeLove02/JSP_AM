@@ -19,4 +19,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ArticleDoDeleteServelet</display-name>
+    <servlet-name>ArticleDoDeleteServelet</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.ArticleDoDeleteServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArticleDoDeleteServelet</servlet-name>
+    <url-pattern>/ArticleDoDeleteServelet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ArticleDoDelete</display-name>
+    <servlet-name>ArticleDoDelete</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.ArticleDoDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArticleDoDelete</servlet-name>
+    <url-pattern>/ArticleDoDelete</url-pattern>
+  </servlet-mapping>
 </web-app>
