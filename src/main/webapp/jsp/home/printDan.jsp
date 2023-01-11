@@ -21,7 +21,7 @@ int limit = Integer.parseInt(inputLimit);
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>구구단 출력</title>
 </head>
 <body>
 	<div style="color:<%= color %>;">== <%= dan %>단 출력 ==</div>
