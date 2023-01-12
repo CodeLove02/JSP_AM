@@ -11,8 +11,22 @@ CREATE TABLE article(
 	`body` TEXT NOT NULL
 );
 
+# member 테이블 생성
+CREATE TABLE `member`(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	regDate DATETIME NOT NULL,
+	loginId VARCHAR(100) NOT NULL,
+	loginPw VARCHAR(100) NOT NULL,
+	`name` VARCHAR(100) NOT NULL
+);
+
 # article 테이블 조회
-SELECT * FROM article;
+SELECT * FROM article ORDER BY id DESC
+
+SELECT COUNT(id) FROM article
+
+# member 테이블 조회
+SELECT * FROM `member`;
 
 # article 데이터 추가
 INSERT INTO article
@@ -30,7 +44,14 @@ SET regDate = NOW(),
 title = 'test3',
 `body` = 'test3';
 
-#다량의 데이터 삽입
-INSERT INTO article(regDate,title,`body`)
-SELECT NOW() , CONCAT('제목_',rand()) , CONCAT('내용_',RAND())
+INSERT INTO article
+SET regDate = NOW(),
+title = 'test4',
+`body` = 'test4';
+
+#article 테이블에 다량의 데이터 삽입
+INSERT INTO article(regDate, title, `body`)
+SELECT NOW(), CONCAT('제목_', RAND()), CONCAT('내용_', RAND())
 FROM article;
+
+

@@ -79,4 +79,34 @@
     <servlet-name>ArticleModify</servlet-name>
     <url-pattern>/ArticleModify</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberDoJoinServlet</display-name>
+    <servlet-name>MemberDoJoinServlet</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.MemberDoJoinServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberDoJoinServlet</servlet-name>
+    <url-pattern>/MemberDoJoinServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberJoinServlet</display-name>
+    <servlet-name>MemberJoinServlet</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.MemberJoinServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberJoinServlet</servlet-name>
+    <url-pattern>/MemberJoinServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Config</display-name>
+    <servlet-name>Config</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.config.Config</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Config</servlet-name>
+    <url-pattern>/Config</url-pattern>
+  </servlet-mapping>
 </web-app>
