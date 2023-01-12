@@ -109,4 +109,34 @@
     <servlet-name>Config</servlet-name>
     <url-pattern>/Config</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberDoLogin</display-name>
+    <servlet-name>MemberDoLogin</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.MemberDoLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberDoLogin</servlet-name>
+    <url-pattern>/MemberDoLogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberDoLogout</display-name>
+    <servlet-name>MemberDoLogout</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.MemberDoLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberDoLogout</servlet-name>
+    <url-pattern>/MemberDoLogout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberLoginServlet</display-name>
+    <servlet-name>MemberLoginServlet</servlet-name>
+    <servlet-class>com.KoreaIT.java.am.MemberLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberLoginServlet</servlet-name>
+    <url-pattern>/MemberLoginServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
