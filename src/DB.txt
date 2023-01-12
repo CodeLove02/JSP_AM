@@ -12,7 +12,7 @@ CREATE TABLE article(
 );
 
 # article 테이블 조회
-SELECT * FROM article ORDER BY id DESC
+SELECT * FROM article;
 
 # article 데이터 추가
 INSERT INTO article
@@ -30,7 +30,7 @@ SET regDate = NOW(),
 title = 'test3',
 `body` = 'test3';
 
-INSERT INTO article
-SET regDate = NOW(),
-title = 'test4',
-`body` = 'test4';
+#다량의 데이터 삽입
+INSERT INTO article(regDate,title,`body`)
+SELECT NOW() , CONCAT('제목_',rand()) , CONCAT('내용_',RAND())
+FROM article;
