@@ -12,7 +12,7 @@ CREATE TABLE article(
 );
 
 # article 테이블 조회
-SELECT * FROM article;
+SELECT * FROM article ORDER BY id DESC
 
 # article 데이터 추가
 INSERT INTO article
@@ -29,3 +29,8 @@ INSERT INTO article
 SET regDate = NOW(),
 title = 'test3',
 `body` = 'test3';
+
+INSERT INTO article
+SET regDate = NOW(),
+title = 'test4',
+`body` = 'test4';
